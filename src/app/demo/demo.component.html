@@ -1,0 +1,19 @@
+<input type='text' style='padding:8px;margin:15px auto;width:30%;' placeholder='Type to filter the name column...' (keyup)='updateFilter($event)'
+/>
+<ngx-datatable
+        class="material"
+        [rows]="rows"
+        [columns]="[{name:'Name'},{name:'Gender'},{name:'Company'}]"
+        [columnMode]="'force'"
+        [headerHeight]="50"
+        [footerHeight]="50"
+        [rowHeight]="'auto'"
+        [externalPaging]="true"
+        [count]="50"
+        (page)='setPage($event)'
+        [loadingIndicator]="loading"
+        (sort)="onSort($event)"
+        [externalSorting]="true"
+        >
+      </ngx-datatable>
+<!-- if externalSorting is false then sorting hapens automatically -->
